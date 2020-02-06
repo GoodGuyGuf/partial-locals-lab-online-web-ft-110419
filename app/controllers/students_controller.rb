@@ -1,4 +1,10 @@
 class StudentsController < ApplicationController
+
+  def index
+    @student = Student.search(params[:search])
+  end # @student is the searched paramater.
+
+
   def new
     @student = Student.new
   end
@@ -18,10 +24,6 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
-  end
-
-  def index
-    @students = Student.all
   end
 
   def student_params
