@@ -1,11 +1,11 @@
 <%= form_tag students_path, method: :get do %>
     <p> 
-    <%= search_field_tag :search, params[:search] %>
+    <%= search_field_tag :query, params[:query] %>
     <%= submit_tag "Search" %>
     </p>
     <% end %>
 
-    <% @student.each do |student| %>
+    <% @students.each do |student| %>
     <%= render "student", {student: student}%>
     <% end %>
 

@@ -1,9 +1,9 @@
 class StudentsController < ApplicationController
 
   def index
-    @student = Student.search(params[:search])
+    @students = Student.search(params[:query])
   end # @student is the searched paramater.
-
+# index.html.erb contains a partial which houses the @student in a local variable.
 
   def new
     @student = Student.new
